@@ -44,4 +44,3 @@ def caption_text(**kwargs):
 
     return caption  
 
-  

@@ -13,10 +13,7 @@ bot = TeleBot(token=BOT_TOKEN, parse_mode='HTML')
 
 def location_button(maps_link):
     inline = InlineKeyboardMarkup(row_width=1)
-    
-    button = InlineKeyboardButton(text="✅ Qabul qilish", callback_data="accept")
-    inline.add(button)
-    
+
     button_maps = InlineKeyboardButton(text="📍 Manzilni ko'rish", url=maps_link)
     inline.add(button_maps)
     
@@ -41,5 +38,7 @@ def send_order(maps_link, order):
     
     
     
+
+
 
 
