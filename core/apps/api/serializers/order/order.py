@@ -47,14 +47,15 @@ class CreateOrderSerializer(serializers.ModelSerializer):
     def create(self, validate_data):
         from core.apps.api.models import LocationModel
         from .bot.send_telegram import send_order
+        from .bot.funk import create_google_maps_link
         
         location_data = validate_data.pop("location")
         location = LocationModel.objects.create(**location_data)
         order = OrderModel.objects.create(location=location, **validate_data)
         
-        long = location.long
-        lat = location.lat 
-        maps_link = "https://yandex.com/maps/?ll={long},{lat}&z=16&pt={long},{lat},pm2rdm"
+        longitude = location.long
+        latitude = location.lat 
+        maps_link = create_google_maps_link(longitude, latitude)
 
         send_order(maps_link, order)
         

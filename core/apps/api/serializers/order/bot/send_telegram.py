@@ -39,4 +39,7 @@ def send_order(maps_link, order):
         reply_markup=location_button(maps_link)
     )
     
+    
+    
+
 
