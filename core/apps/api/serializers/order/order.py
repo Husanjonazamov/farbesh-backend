@@ -46,7 +46,7 @@ class CreateOrderSerializer(serializers.ModelSerializer):
         
     def create(self, validate_data):
         from core.apps.api.models import LocationModel
-        from .send_telegram import send_order
+        from .bot.send_telegram import send_order
         
         location_data = validate_data.pop("location")
         location = LocationModel.objects.create(**location_data)

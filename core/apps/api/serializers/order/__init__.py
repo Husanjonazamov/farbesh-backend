@@ -1,3 +1,3 @@
 from .order import *  # noqa
-from .send_telegram import *  # noqa
+from .bot import *  # noqa
 
