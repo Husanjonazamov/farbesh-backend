@@ -63,9 +63,14 @@ class RegisterView(BaseViewSetMixin, GenericViewSet, UserService):
         
         self.create_user(phone, data.get("password"))
         self.send_confirmation(phone) 
+        token = self.validate_user(get_user_model().objects.filter(phone=phone).first())
+        
         return Response(
-            {"detail": "Foydalanuvchi muvaffaqiyatli ro'yxatdan o'tdi."},
-            status=status.HTTP_201_CREATED
+            data={
+                "detail": _("Foydalanuvchi muvaffaqiyatli ro'yhatdan o'tdi"),
+                "token": token,
+            },
+            status=status.HTTP_202_ACCEPTED,
         )
 
 
