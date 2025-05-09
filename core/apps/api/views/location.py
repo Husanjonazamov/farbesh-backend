@@ -1,7 +1,7 @@
 from django_core.mixins import BaseViewSetMixin
 from drf_spectacular.utils import extend_schema
 from rest_framework.permissions import AllowAny
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.viewsets import ModelViewSet
 
 from core.apps.api.models import LocationModel
 from core.apps.api.serializers.location import (
@@ -12,7 +12,7 @@ from core.apps.api.serializers.location import (
 
 
 @extend_schema(tags=["location"])
-class LocationView(BaseViewSetMixin, ReadOnlyModelViewSet):
+class LocationView(BaseViewSetMixin, ModelViewSet):
     queryset = LocationModel.objects.all()
     serializer_class = ListLocationSerializer
     permission_classes = [AllowAny]

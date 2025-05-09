@@ -9,6 +9,8 @@ class BaseLocationSerializer(serializers.ModelSerializer):
         fields = [
             "id",
             "name",
+            "long",
+            "lat"
         ]
 
 
@@ -25,4 +27,6 @@ class CreateLocationSerializer(BaseLocationSerializer):
         fields = [
             "id",
             "name",
+            "long",
+            "lat"
         ]

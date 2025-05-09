@@ -18,7 +18,7 @@ class PeopleCountChoices(models.TextChoices):
 
 class OrderModel(AbstractBaseModel):
     name = models.CharField(verbose_name=_("Ism"), max_length=255)
-    phone = models.IntegerField(
+    phone = models.BigIntegerField(
         verbose_name=_("Telefon raqam"),
         default=0,
         blank=True,
