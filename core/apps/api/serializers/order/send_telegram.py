@@ -23,16 +23,6 @@ def location_button(maps_link):
 def caption_text(**kwargs):
     caption = ''
     
-    if kwargs['gender'] == 'other':
-        choice_label = "📦 Boshqa"
-        gender_text = "Pochta"
-    elif kwargs['gender'] == "male":
-        choice_label = "🧑‍💼 Yo'lovchi"
-        gender_text = "Erkak"
-    else:
-        choice_label = "👩🏻 Yo'lovchi"
-        gender_text = "Ayol"
-        
     if kwargs['count'] == "one":
         count = '1 kishi'
     elif kwargs['count'] == "two":
@@ -42,11 +32,35 @@ def caption_text(**kwargs):
     else:
         count = '4 kishi'
     
-    caption = "🎯 <b>Yangi Buyurtma</b>\n\n"
-    caption += f"👤 <b>Ism: {kwargs['name']}</b>\n"
-    caption += f"📞 <b>Telefon: {kwargs['phone']}</b>\n"
-    caption += f"<b>{choice_label}: {gender_text}</b>\n"  
-    caption += f"🔢 <b>Soni: {count}</b>"
+    if kwargs['gender'] == 'other':
+        choice_label = "📦 Boshqa"
+        gender_text = "Pochta"
+        
+        caption = "🎯 <b>Yangi Buyurtma</b>\n\n"
+        caption += f"👤 <b>Ism: {kwargs['name']}</b>\n"
+        caption += f"📞 Telefon: <b>+{kwargs['phone']}</b>\n"
+        caption += f"<b>{choice_label}: {gender_text}</b>\n"  
+        
+    elif kwargs['gender'] == "male":
+        choice_label = "🧑‍💼 Yo'lovchi"
+        gender_text = "Erkak"
+         
+        caption = "🎯 <b>Yangi Buyurtma</b>\n\n"
+        caption += f"👤 <b>Ism: {kwargs['name']}</b>\n"
+        caption += f"📞 Telefon: <b>+{kwargs['phone']}</b>\n"
+        caption += f"<b>{choice_label}: {gender_text}</b>\n"  
+        caption += f"🔢 <b>Soni: {count}</b>"
+         
+        
+    else:
+        choice_label = "👩🏻 Yo'lovchi"
+        gender_text = "Ayol"
+
+        caption = "🎯 <b>Yangi Buyurtma</b>\n\n"
+        caption += f"👤 <b>Ism: {kwargs['name']}</b>\n"
+        caption += f"📞 Telefon: <b>+{kwargs['phone']}</b>\n"
+        caption += f"<b>{choice_label}: {gender_text}</b>\n"  
+        caption += f"🔢 <b>Soni: {count}</b>"
 
     return caption  
 
