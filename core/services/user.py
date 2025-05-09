@@ -17,12 +17,11 @@ class UserService(sms.SmsService):
             "access": str(refresh.access_token),
         }
 
-    def create_user(self, phone, first_name, password):
+    def create_user(self, phone, password):
         get_user_model().objects.update_or_create(
             phone=phone,
             defaults={
                 "phone": phone,
-                "first_name": first_name,
                 "password": hashers.make_password(password),
             },
         )

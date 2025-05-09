@@ -61,7 +61,7 @@ class RegisterView(BaseViewSetMixin, GenericViewSet, UserService):
             )
             return
         
-        self.create_user(phone, data.get("first_name"), data.get("password"))
+        self.create_user(phone, data.get("password"))
         self.send_confirmation(phone) 
         return Response(
             {"detail": "Foydalanuvchi muvaffaqiyatli ro'yxatdan o'tdi."},
