@@ -54,12 +54,12 @@ class RegisterView(BaseViewSetMixin, GenericViewSet, UserService):
         data = ser.data
         phone = data.get("phone")
         user_model = get_user_model()
+        
         if user_model.objects.filter(phone=phone).exists():
             return Response(
                 {"detail": _("Bu foydalanuvchi allaqachon mavjud.")},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-            return
         
         self.create_user(phone, data.get("password"))
         self.send_confirmation(phone) 

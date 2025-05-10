@@ -10,7 +10,6 @@ GROUP_ID = env.int("GROUP_ID")
 bot = TeleBot(token=BOT_TOKEN, parse_mode='HTML')
 
 
-
 def location_button(maps_link):
     inline = InlineKeyboardMarkup(row_width=1)
 
@@ -20,11 +19,9 @@ def location_button(maps_link):
     return inline
 
 
-
 def send_order(maps_link, order):
     
     caption = caption_text(
-        name=order.name,
         phone=order.phone,
         gender=order.gender,
         count=order.count

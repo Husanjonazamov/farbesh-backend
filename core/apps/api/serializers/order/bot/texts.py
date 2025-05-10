@@ -17,7 +17,6 @@ def caption_text(**kwargs):
         gender_text = "Pochta"
         
         caption = "🎯 <b>Yangi Buyurtma</b>\n\n"
-        caption += f"👤 <b>Ism: {kwargs['name']}</b>\n"
         caption += f"📞 Telefon: <b>+{kwargs['phone']}</b>\n"
         caption += f"<b>{choice_label}: {gender_text}</b>\n"  
         
@@ -26,7 +25,6 @@ def caption_text(**kwargs):
         gender_text = "Erkak"
          
         caption = "🎯 <b>Yangi Buyurtma</b>\n\n"
-        caption += f"👤 <b>Ism: {kwargs['name']}</b>\n"
         caption += f"📞 Telefon: <b>+{kwargs['phone']}</b>\n"
         caption += f"<b>{choice_label}: {gender_text}</b>\n"  
         caption += f"🔢 <b>Soni: {count}</b>"
@@ -37,7 +35,6 @@ def caption_text(**kwargs):
         gender_text = "Ayol"
 
         caption = "🎯 <b>Yangi Buyurtma</b>\n\n"
-        caption += f"👤 <b>Ism: {kwargs['name']}</b>\n"
         caption += f"📞 Telefon: <b>+{kwargs['phone']}</b>\n"
         caption += f"<b>{choice_label}: {gender_text}</b>\n"  
         caption += f"🔢 <b>Soni: {count}</b>"

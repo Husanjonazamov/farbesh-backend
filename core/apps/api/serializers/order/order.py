@@ -9,7 +9,6 @@ class BaseOrderSerializer(serializers.ModelSerializer):
         model = OrderModel
         fields = [
             "id",
-            "name",
             "location",
             "phone",
             "gender",
@@ -37,7 +36,6 @@ class CreateOrderSerializer(serializers.ModelSerializer):
         model = OrderModel
         fields = [
             'id',
-            'name',
             'phone',
             'location',
             'gender',
